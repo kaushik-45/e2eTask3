@@ -1,0 +1,45 @@
+<div *ngIf="receivedData.length > 0; else noData">
+  <div class="final-form">
+    <h1>Generated Form</h1>
+    <form>
+      &lt;form&gt;
+      <div *ngFor="let data of receivedData">
+        &lt;label for="example_{{ data.elementName }}"&gt;{{
+          data.elementName
+        }}&lt;/label&gt;
+        <div *ngIf="data.elementType === 'select'; else noOption">
+          &lt;select name="example_{{ data.elementName }}" id="example_{{
+            data.elementType
+          }}" required&gt;
+          <div class="opt" *ngFor="let option of data.Options">
+            &lt;option value ="option"&gt;
+            {{ option }}
+            &lt;/option&gt;
+          </div>
+          &lt;/select&gt;
+        </div>
+        <ng-template #noOption>
+          <div>
+            &lt;input type={{ data.elementType }} name="example_{{
+              data.elementType
+            }}" id="example_{{ data.elementType }}" placeholder={{
+              data.elementName
+            }}
+            &gt;
+          </div>
+        </ng-template>
+      </div>
+      &lt;/form&gt;
+    </form>
+  </div>
+</div>
+<ng-template #noData>
+  <p>No data received.</p>
+</ng-template>
+<br/>
+<br/>
+<div class="center-button">
+<button mat-raised-button color="warn" (click)="viewForm()">
+  show Form
+</button>
+</div>

@@ -1,0 +1,59 @@
+
+
+.example-form {
+
+   
+   margin: 0px;
+   padding: 0px;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   margin-top: 50px;
+  }
+  
+ .btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+ }
+
+ .btn button {
+  margin: 0 10px; 
+}
+  .mat-mdc-radio-button ~ .mat-mdc-radio-button {
+    margin-left: 16px;
+  }
+  
+
+  @media only screen and (max-width: 600px) {
+    .example-form {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .btn {
+      margin-top: 10px;
+    }
+  
+    .btn button {
+      margin: 10px ;
+    }
+  }
+
+
+
+
+  .kkwd {
+    margin-top: 20px; 
+    padding: 16px; 
+    margin-left: 60px;
+  }
+  
+  .kkwd mat-form-field {
+    margin-bottom: 16px; 
+  }
+  
+  .kkwd button {
+    margin-top: 8px; 
+  }

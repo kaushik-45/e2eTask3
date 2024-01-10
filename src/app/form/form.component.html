@@ -1,0 +1,60 @@
+<form class="example-form">
+  <mat-form-field
+    class="example-full-width"
+    class="feild-value"
+    appearance="fill"
+  >
+    <mat-label>Element-name</mat-label>
+    <input
+      matInput
+      placeholder=""
+      [(ngModel)]="elementName"
+      name="elementName"
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="feild-value">
+    <mat-label>Select an element Type</mat-label>
+    <select matNativeControl [(ngModel)]="elementType" name="elementType">
+      <option value="select">Select</option>
+      <option value="text">Text</option>
+      <option value="email">Email</option>
+      <option value="password">Password</option>
+    </select>
+  </mat-form-field>
+  <div>
+    <mat-radio-group
+      labelPosition="before"
+      [(ngModel)]="radioOption"
+      name="radioOption"
+      class="feild-value"
+    >
+      <mat-label>Required </mat-label>
+      <mat-radio-button value="yes">Yes</mat-radio-button>
+      <mat-radio-button value="no">No</mat-radio-button>
+    </mat-radio-group>
+  </div>
+</form>
+
+<div class="btn">
+  <button mat-raised-button color="primary" (click)="addField()">
+    Add Feild
+  </button>
+  <button mat-raised-button color="warn" (click)="showForm()">
+    Render Form
+  </button>
+</div>
+
+<div class="kkwd">
+  <mat-form-field
+    *ngIf="elementType === 'select'"
+    class="example-full-width"
+    appearance="fill"
+  >
+    <mat-label>Adding options</mat-label>
+    <input matInput placeholder="select" [(ngModel)]="texting" name="texting" />
+    <button mat-raised-button color="accent" (click)="changeTexting()">
+      Add options
+    </button>
+  </mat-form-field>
+</div>
